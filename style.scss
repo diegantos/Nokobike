@@ -1,0 +1,1076 @@
+
+@use 'sass/abstracts/variables' as *;
+@use 'sass/abstracts/mixins' as *;
+@use 'sass/abstracts/flex' as *;
+@import "sass/hamburguers/hamburgers.scss";
+@import 'animate.css';
+
+*{
+    scroll-behavior: smooth;
+}
+body{
+    &.activo{
+        overflow: hidden;
+    }
+}
+.btn{
+    display: inline-block;
+    background-color: $gris;
+    padding: 14px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2.2rem;
+    position: relative;
+    &:hover{
+        &::after{
+            transform: scaleX(1);
+        }
+        span{
+            color: $negro;
+        }
+    }
+    span{
+        position: relative;
+        z-index: 15;
+        font-family: $fontmedium;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $rojooscuro;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.3s;
+    }
+}
+header{
+    background-color: $negro;
+    padding: $sizeM;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    img{
+        filter: invert(1);
+    }
+    nav{
+        ul{
+            list-style: none;
+            text-transform: uppercase;
+            li{
+                margin-right: $sizeL;
+                a{
+                    color: $blanco;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    font-family: $fontmedium;
+                    transition: 0.2s;
+                }
+                a:hover{
+                    color: $azuloscuro;
+                }
+            }
+        }
+    }
+    .hamburger{
+        display: none;
+    }
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+        background-color: $blanco;
+    }
+    .hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after{
+        background-color: $blanco;
+    }
+    .hamburger:hover, .hamburger.is-active:hover{
+        opacity: 1;
+    }
+    &.activo{
+        position: sticky;
+        // position: fixed;
+        width: 100%;
+        top: -105px;
+        left: 0;
+        transition: 2s;
+    }
+    @include corte(tablet){
+        .nav{
+            display: none;
+        }
+        .hamburger{
+            display: block;
+        }
+        .activo{
+            height: 100vh;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            justify-content: space-between;
+            align-content: flex-start;
+            align-items: center;
+            background-color: $negro;
+            img{
+                width: 120px;
+                display: inline-block;
+            }
+            button{
+                display: flex;
+                width: 50%;
+                justify-content: flex-end;
+            }
+            .nav{
+                display: flex;
+                .flex{
+                    flex-direction: column;
+                    margin-top: 250px;
+                    margin-left: 310px;
+                    li{
+                        padding: $sizeM;
+                        margin: 0;
+                    }
+                }
+            }
+            
+        }
+    }
+    @include corte(movil){
+        img{
+            width: 120px;
+        }
+        .activo{
+            .nav{
+                display: flex;
+                .flex{
+                    flex-direction: column;
+                    margin-top: 250px;
+                    margin-left: 70px;
+                    li{
+                        padding: $sizeM;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.intro{
+    background-color: black;
+    position: relative;
+    padding-top: 95px;
+    &.activo{
+        padding-top: 0;
+    }
+    video{
+        width: 100%;
+        height: 90vh;
+        object-fit: cover;
+        display: block;
+        // position: absolute;
+    }
+    &__text{
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        color: white;
+        h1{
+            font-size: $sizeL;
+            span{
+                font-family: $fontmedium;
+            }
+            span:first-child{
+                color: $verdeoscuro;
+            }
+            span:last-child{
+                color: $rojooscuro;
+            }
+        }
+        p{
+            font-size: $sizeM;
+        }
+        .btn{
+            margin-top: $sizeM;
+        }
+    }
+    @include corte(movil){
+        &__text{
+            left: 10%;
+            .btn{
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+.cards{
+    width: 100%;
+    height: 80vh;
+    &__card{
+        flex: 1;
+        flex-direction: column;
+        background-color: white;
+        border-right: 1px solid $negro;
+        position: relative;
+        overflow: hidden;
+        &:last-child{
+            border: none;
+            img{
+                width: 100%;
+                margin: auto;
+            }
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+            transition: 0.2s;
+        }
+        h2{
+            width: 100%;
+            text-align: center;
+            font-size: 3.2rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+            position: relative;
+            transition: 0.2s;
+            font-family: $fontmedium;
+        }
+        p{
+            text-align: center;
+            font-size: 1.5rem;
+            position: relative;
+            transition: 0.2s;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $negro;
+            transform: scaleY(0);
+            transition: 0.3s;
+            z-index: 5;
+            color: $blanco;
+        }
+        &:hover:not(:last-child){
+            cursor: pointer;
+            box-shadow: 0 10px 15px 2px $negro;
+            transition: 0.3s;
+            &::after{
+                transform: scaleY(1);
+                opacity: 0.5;
+            }
+            h2{
+                transform: translateY(120px);
+                transition: 0.3s;
+                color: $blanco;
+                text-shadow: 3px 3px 2px black;
+                z-index: 10;
+            }
+            p{
+                transform: translateY(-120px);
+                transition: 0.3s;
+                visibility: 0;
+                color: $blanco;
+                text-shadow: 2px 1px 2px black;
+                z-index: 10;
+            }
+        }
+        &:first-child:hover{
+            & ~ :last-child{
+                img{
+                    display: none;
+                }
+                video:nth-child(2){
+                    display: block;
+                }
+                .btn:first-of-type{
+                    display: inline-block;
+                    background-color: $rojooscuro;
+                    padding: 14px 34px;
+                }
+            }
+        }
+        &:nth-child(2):hover{
+            & ~ :last-child{
+                img{
+                    display: none;
+                }
+                video:nth-child(3){
+                    display: block;
+                }
+                .btn:nth-of-type(2){
+                    display: inline-block;
+                    background-color: $rojooscuro;
+                }
+            }
+        }
+        &:nth-child(3):hover{
+            & ~ :last-child{
+                img{
+                    display: none;
+                }
+                video:nth-child(4){
+                    display: block;
+                }
+                .btn:last-of-type{
+                    display: inline-block;
+                    background-color: $rojooscuro;
+                    padding: 14px 23px;
+                }
+            }
+        }
+    }
+    video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    video:nth-child(2), video:nth-child(3), video:nth-child(4){
+        display: none;
+        position: relative;
+    }
+    .btn{
+        display: none;
+        position: absolute;
+        top: 53%;
+        left: 25%;
+    }
+    @include corte(tablet){
+        height: 50vh;
+        &__card{
+            h2{
+                font-size: 12px;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+        }
+    }
+    @include corte(movil){
+        height: 205vh;
+        flex-direction: column;
+        &__card{
+            height: 50vh;
+            border-right: none;
+            border-bottom: 1px solid $negro;
+            &:nth-child(3){
+                border: none;
+            }
+            &:last-child{
+                display: none;
+            }
+            h2{
+                font-size: 3.2rem;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+.madein{
+    padding: $sizeL;
+    background-image: url(img/DSC5324-scaled.jpg);
+    background-size: cover;
+    background-position: right;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    &__titulo{
+        text-align: center;
+        color: $blanco;
+        text-shadow: 3px 2px 3px $negro;
+        opacity: 0;
+        h2{
+            font-size: 6.2rem;
+            text-transform: uppercase;
+            font-family: $fontsemibold;
+        }
+        p{
+            font-size: 2.2rem;
+            margin-bottom: 35px;
+        }
+    }
+    &__contenido{
+        position: absolute;
+        right: 4%;
+        text-align: center;
+        &__caja{
+            width: 100%;
+            background-color: $blanco;
+            padding: 8px;
+            opacity: 0.9;
+            transition: 0.5s;
+            position: relative;
+            opacity: 0;
+            img{
+                width: 100px;
+                padding-top: 15px;
+            }
+            h4{
+                position: absolute;
+                top: -15px;
+                left: 20%;
+                right: 20%;
+                background-color: $marronoscuro;
+                color: $blanco;
+                font-size: 2rem;
+                padding: 0 4px;
+                transition: 0.4s;
+                box-shadow: 1px 2px 10px $negro;
+                text-transform: uppercase;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+            &:hover{
+                box-shadow: 1px 5px 10px $negro;
+                h4{
+                    color: $negro;
+                    box-shadow: 1px 5px 10px $negro;
+                }
+            }
+        }
+        &__caja:not(:last-child){
+            margin-bottom: 40px;
+        }
+    }
+    @include corte(tablet){
+        height: 85vh;
+    }
+    @include corte(movil){
+        height: 100vh;
+        padding: $sizeS;
+        &__contenido{
+            right: 7%;
+            &__caja{
+                padding: 4px;
+            }
+            &__caja:not(:last-child){
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+.ready{
+    background-color: $negro;
+    background-image: url(img/bg_pattern.png);
+    background-position: center;
+    background-size: 150px;
+    padding: $sizeXL;
+    position: relative;
+    h3{
+        position: absolute;
+        font-size: 3.6rem;
+        top: -40px;
+        left: 17%;
+        background-color: $blanco;
+        padding: 14px 60px;
+        text-transform: uppercase;
+        font-family: $fontregular;
+        opacity: 0;
+    }
+    &__interior{
+        padding: $sizeL;
+        overflow: hidden;
+        img{
+            width: 70%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &__texto{
+            width: 40%;
+            background-color: $blanco;
+            padding: 30px;
+            position: absolute;
+            right: 15%;
+            opacity: 0;
+            h5{
+                font-size: 2.6rem;
+                margin-bottom: 25px;
+                text-transform: uppercase;
+                font-family: $fontregular;
+            }
+            p{
+                font-size: 1.6rem;
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    @include corte(tablet){
+        padding: $sizeM;
+        h3{
+            top: -30px;
+            padding: 6px 10px;
+        }
+        &__interior{
+            &__texto{
+                width: 50%;
+                // max-height: 45%;
+                padding: 10px;
+                h5{
+                    font-size: 1.4rem;
+                    margin-bottom: 5px;
+                }
+                p{
+                    font-size: 0.8rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    @include corte(movil){
+        padding: $sizeS;
+        &__interior{
+            flex-direction: column;
+            &__texto{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                right: 0;
+                margin-top: $sizeM;
+            }
+        }
+        h3{
+            font-size: 2.6rem;
+            padding: 4px 12px;
+            top: -10px;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}
+.bikes{
+    width: 100%;
+    &__description{
+        &:nth-child(2){
+            flex-direction: row-reverse;
+        }
+        &__info{
+            width: 50%;
+            background-color: $blanco;
+            flex-direction: column;
+            padding: $sizeXL;
+            text-align: center;
+            h2{
+                font-size: 4.6rem;
+                font-family: $fontsemibold;
+                margin-bottom: 10px;
+                transition: 0.5s;
+                position: relative;
+                &:hover{
+                    color: $rojooscuro;
+                    &::after{
+                        transform: scale(1);
+                    }
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-bottom: 2px solid $rojooscuro;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: 0.5s;
+                }
+            }
+            h4{
+                font-size: 2.2rem;
+                margin-bottom: 25px;
+            }
+            p{
+                font-size: 1.6rem;
+            }
+            a{
+                margin-top: 35px;
+                background-color: $negro;
+            }
+        }
+        img{
+            width: 50%;
+            object-fit: cover;
+        }
+    }
+    @include corte(tablet){
+        &__description{
+            flex-direction: column;
+            &:nth-child(2){
+                flex-direction: column;
+            }
+            &__info{
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+    @include corte(movil){
+        &__description{
+            &__info{
+                padding: 30px;
+                h2{
+                    font-size: 3.2rem;
+                }
+                h4{
+                    font-size: 1.6rem;
+                }
+                p{
+                    font-size: 1.2rem;
+                }
+                a{
+                    margin-top: 25px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+footer{
+    background-color: $negro;
+    color: $blanco;
+    padding: $sizeXL;
+    .newsletter{
+        font-size: 2.2rem;
+        gap: $sizeM;
+        input{
+            border: none;
+            outline: none;
+            background-color: $negro;
+            border-bottom: 2px solid $crema;
+            width: 300px;
+            text-align: left;
+            color: $blanco;
+            padding: 6px;
+        }
+        ::placeholder{
+            color: $blanco;
+            font-size: 2.2rem;
+            text-align: center;
+                
+        }
+        .btn{
+            font-size: 1.6rem;
+            padding: 6px 20px;
+        }
+    }
+    .about{
+        margin: $sizeL 0;
+        gap: $sizeXL;
+        p{
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+            transition: 0.2s;
+            &:hover{
+                cursor: pointer;
+                color: $azuloscuro;
+            }
+        }
+    }
+    .social-media{
+        gap: 35px;
+        margin-bottom: $sizeL;
+        i{
+            color: $blanco;
+            font-size: 2.2rem;
+            transition: 0.2s;
+            &:hover{
+                color: $azuloscuro;
+            }
+        }
+    }
+    .register{
+        font-size: 1.6rem;
+        opacity: 0.5;
+    }
+    @include corte(movil){
+        padding: $sizeL;
+        .newsletter, .about{
+            flex-direction: column;
+        }
+        .about{
+            margin: $sizeM $sizeL;
+            gap: $sizeM;
+        }
+    }
+}
+.nokoforza{
+    padding: $sizeL $sizeM;
+    padding-top: $sizeXL;
+    &.activo{
+        padding-top: 0;
+    }
+    &__fotos__negra{
+        display: none;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+        &__miniaturas{
+            width: 19%;
+            gap: 3px;
+            cursor: pointer;
+        }
+        &.muestra{
+            display: block;
+        }
+    }
+    &__fotos__verde{
+        display: none;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+        &__miniaturas{
+            width: 19%;
+            gap: 3px;
+            cursor: pointer;
+        }
+        &.muestra{
+            display: block;
+        }
+    }
+    &__fotos__naranja{
+        display: none;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+        &__miniaturas{
+            width: 19%;
+            gap: 3px;
+            cursor: pointer;
+        }
+        &.muestra{
+            display: block;
+        }
+    }
+    &__info{
+        padding: $sizeL $sizeS;
+        div{
+            width: 60%;
+        }
+        h1{
+            font-size: 4rem;
+            font-family: $fontregular;
+        }
+        h4{
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        p{
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            &:last-child{
+                font-size: 1.4rem;
+            }
+        }
+        span{
+            font-size: 2rem;
+            margin-right: 25px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            // &:last-child{
+            //     font-size: 1.4rem;
+            // }
+        }
+        ul{
+            list-style: none;
+            li{
+                margin-right: $sizeS;
+                border: 1px solid black;
+                padding: 7px 12px;
+                cursor: pointer;
+            }
+        }
+        .size{
+            &__s, &__m, &__l{
+                &.activo{
+                    background-color: $negro;
+                    color: $blanco;
+                }
+            }
+        }
+        .color{
+            li{
+                width: 33px;
+                height: 30px;
+                position: relative;
+                i{
+                    position: absolute;
+                    top: 14%;
+                    left: 18%;
+                    font-size: 2.2rem;
+                }
+            }
+            &__b{
+                background-color: $negro;
+                color: $negro;
+                &.activo{
+                    color: $blanco;
+                }
+            }
+            &__g{
+                background-color: #014425;
+                color: #014425;
+                &.activo{
+                    color: $blanco;
+                }
+            }
+            &__o{
+                background-color: #ff4500;
+                color: #ff4500;
+                &.activo{
+                    color: $blanco;
+                }
+            }
+        }
+        .handle{
+            &__f, &__r{
+                &.activo{
+                    background-color: $negro;
+                    color: $blanco;
+                }
+            }
+        }
+        .wheels{
+            &__a, &__c{
+                &.activo{
+                    background-color: $negro;
+                    color: $blanco;
+                }
+            }
+        }
+        .price{
+            width: 60%;
+            flex-direction: row;
+            span{
+                margin-right: $sizeS;
+            }
+            span:first-child{
+                font-size: 1.6rem;
+            }
+            span:nth-child(2){
+                display: none;
+                &.activo{
+                    display: block;
+                }
+            }
+            span:last-child{
+                display: none;
+                &.activo{
+                    display: block;
+                }
+            }
+        }
+    }
+    .desplegable{
+        padding: $sizeM;
+        &__titulo{
+            width: 50%;
+            border-bottom: 2px solid black;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            .plus{
+                position: relative;
+                span:first-child{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 10px;
+                    height: 1px;
+                    border: 1px solid black;
+                    background-color: black;
+                }
+                span:last-child{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 10px;
+                    height: 1px;
+                    border: 1px solid black;
+                    background-color: black;
+                    transform: rotate(-90deg);
+                    transition: 0.4s;
+                }
+                &.activo{
+                    span:last-child{
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+        }
+        &__contenido{
+            display: none;
+            width: 50%;
+            ul{
+                list-style: none;
+                font-size: 1.4rem;
+                padding-left: 5px;
+                margin-bottom: 12px;
+            }
+            img{
+                width: 100%;
+            }
+            table{
+                margin: auto;
+                width: 50%;
+                margin-bottom: 15px;
+                border-collapse: collapse;
+                .texto--naranja{
+                    color: #ff4500;
+                }
+                .texto--azul{
+                    color: #0084a4;
+                }
+                .texto--verde{
+                    color: #41735c;
+                }
+                thead{
+                    font-size: 1.6rem;
+                    text-align: left;
+                }
+                tbody{
+                    font-size: 1.4rem;
+                }
+                tr{
+                    margin-bottom: 5px;
+                    border-bottom: 1px solid black;
+                }
+            }
+            h4{
+                font-size: 1.6rem;
+                padding-left: 5px;
+            }
+            p{
+                font-size: 1.4rem;
+                padding-left: 5px;
+            }
+    }
+    }
+    @include corte(tablet){
+        .wrapper{
+            max-width: 90%;
+        }
+        margin: auto;
+        div{
+            flex-direction: column;
+            .nokoforza__fotos__negra__miniaturas, .nokoforza__fotos__verde__miniaturas, .nokoforza__fotos__naranja__miniaturas{
+                flex-direction: row;
+            }
+            .size, .color, .handle, .wheels{
+                flex-direction: row;
+            }
+        }
+        .desplegable{
+            &__titulo{
+                flex-direction: row;
+                width: 100%;
+            }
+            &__contenido{
+                width: 100%;
+                table{
+                    width: 70%;
+                }
+            }
+        }
+    }
+    @include corte(movil){
+        padding-top: $sizeXL;
+        padding-bottom: $sizeS;
+        .wrapper{
+            width: 100%;
+        }
+        &__info{
+            padding-bottom: $sizeM;
+        }
+        div{
+            flex-direction: column;
+            .nokoforza__fotos__negra__miniaturas, .nokoforza__fotos__verde__miniaturas, .nokoforza__fotos__naranja__miniaturas{
+                flex-direction: row;
+            }
+            .size, .color, .handle, .wheels, .price{
+                width: 100%;
+            }
+        }
+        .desplegable{
+            &__contenido{
+                table{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.related{
+    padding: $sizeL $sizeM;
+    h2{
+        width: 100%;
+        text-align: center;
+        font-size: 2.8rem;
+        font-family: $fontregular;
+        text-transform: uppercase;
+        margin-bottom: $sizeL;
+    }
+    &__cards{
+        width: 100%;
+        margin-bottom: $sizeXL;
+        &__card{
+            width: 30%;
+            div{
+                flex-direction: column;
+            }
+            img{
+                width: 100%;
+            }
+            h5{
+                text-align: center;
+                font-size: 1.6rem;
+            }
+            p{
+                text-align: center;
+                font-size: 1.2rem;
+                margin: $sizeS auto;
+            }
+            a{
+                font-size: 1.2rem;
+                padding: 6px 20px;
+            }
+        }
+    }
+    @include corte(tablet){
+        padding: 0 $sizeM;
+        h2{
+            margin-bottom: $sizeS;
+        }
+        &__cards{
+            flex-direction: column;
+            &__card{
+                width: 60%;
+            }
+        }
+    }
+    @include corte(movil){
+        h2{
+            font-size: 2.2rem;
+        }
+        &__cards{
+            &__card{
+                width: 80%;
+            }
+        }
+    }
+}

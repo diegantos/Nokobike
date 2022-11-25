@@ -1,0 +1,41 @@
+$sizeS: 10px;
+$sizeM: 20px;
+$sizeL: 50px;
+$sizeXL: 100px;
+
+$verdeoscuro: #36A85E;
+$verdeclaro: #85FFAF;
+$verdemedio: #68F59A;
+$rojooscuro: #A82A25;
+$rojoclaro: #F56C67;
+$azul: #80B1C2;
+$azulclaro: #A7BBC2;
+$azuloscuro: #596E75;
+$marronclaro: #C2986C;
+$marronoscuro: #756759;
+$blanco: #F2F0E4;
+$crema: #F2DCC2;
+$cremaoscuro: #D9C0A3;
+$gris: #333333;
+$negro: #252525;
+
+$fontxextralight: 'Chillax-Extralight';
+$fontlight: 'Chillax-Light';
+$fontregular: 'Chillax-Regular';
+$fontmedium: 'Chillax-Medium';
+$fontsemibold: 'Chillax-Semibold';
+$fontbold: 'Chillax-Bold';
+$fontexcon: 'Excon';
+$fontranade: 'Ranade';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: $fontregular;
+    // font-family: 'Excon', sans-serif;
+    font-family: 'Ranade', sans-serif;
+}
+html {
+    font-size: 62.5%;
+}
