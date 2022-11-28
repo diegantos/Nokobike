@@ -2,7 +2,7 @@
 ![Imagen del proyecto](https://user-images.githubusercontent.com/118907489/204322209-21d44fa6-5166-4321-84e3-43b62a3c1cf9.png)
 
 ## Ejemplo en vivo
-- [Enlace directo Nokobike](https://effervescent-platypus-119fbc.netlify.app/)
+- [Enlace directo Nokobike](https://clever-longma-58801e.netlify.app)
 <!-- - [URL-de-la-api](URL-de-la-api) -->
 
 ## Descripción 📑
