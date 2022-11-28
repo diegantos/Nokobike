@@ -7,11 +7,11 @@
 
 ## Descripción 📑
 
-En este proyecto me he introducido en mi primera prueba realizando una web con React
+Este es un proyecto al gusto inspirado en la marca italiana de bicicletas eléctricas Noko
 
 ## ¿Qué he aprendido en este proyecto? 🙇🏻 
 
-En este proyecto me he introducido en mi primera prueba realizando una web con React
+En este proyecto he aprendido el uso de JQuery para hacer algunos efectos en la maquetación
 
 ## Tecnologías 🛠
 <!-- Iconos sacados de: https://github.com/hendrasob/badges/blob/master/README.md y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
