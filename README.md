@@ -29,7 +29,7 @@ Si quieres hechar un vistazo al proyecto, te recomiendo:
 ## Autor ✒️
 **DIEGO SANTOS**
 
-* [info@diegantos.com](mailto:info@diegantos.com)
+* [info@diegantos.com](mailto:info@diegantos.com?subject=Hello!)
 * [LinkedIn](https://www.linkedin.com/in/diegantos/)
 * [Porfolio web](https://diegantos.com)
 
