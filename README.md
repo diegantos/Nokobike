@@ -25,8 +25,6 @@ Si quieres hechar un vistazo al proyecto, te recomiendo:
 
 ![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204326898-7694dfd4-b301-4afe-ad68-dd5178643a10.png)
 ![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204326902-faae74da-e57b-43ce-bc32-56a02ce59be7.png)
-![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204331351-bb44e47d-5365-444c-b4c2-18a37e8c1ef9.png)
-![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204326889-c2841acd-bcc9-4a68-b420-d767eb86f677.png)
 
 ## Autor ✒️
 **DIEGO SANTOS**
