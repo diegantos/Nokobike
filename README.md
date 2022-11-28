@@ -1,5 +1,5 @@
 # Nokobike
-![Imagen del proyecto](https://user-images.githubusercontent.com/118907489/204322209-21d44fa6-5166-4321-84e3-43b62a3c1cf9.png)
+![Imagen del proyecto](https://user-images.githubusercontent.com/118907489/204326885-1efa278e-a114-4665-84c8-bb3d8a1858f0.png)
 
 ## Ejemplo en vivo
 - [Enlace directo Nokobike](https://clever-longma-58801e.netlify.app)
@@ -23,9 +23,11 @@ En este proyecto me he introducido en mi primera prueba realizando una web con R
 ## Vista previa del proyecto
 Si quieres hechar un vistazo al proyecto, te recomiendo:
 
-![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204322965-348bbd4c-6153-4c59-83f4-7e1755909130.png)
-![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204323725-d4e7cfcd-21c7-4976-99cf-030641f0fec9.png)
-![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204322978-785e6e7c-c4fa-4b20-a849-19003fe1c574.png)
+![Noko1](https://user-images.githubusercontent.com/118907489/204326885-1efa278e-a114-4665-84c8-bb3d8a1858f0.png)
+![Noko2](https://user-images.githubusercontent.com/118907489/204326889-c2841acd-bcc9-4a68-b420-d767eb86f677.png)
+![Noko3](https://user-images.githubusercontent.com/118907489/204326890-27268e03-7159-4f33-b028-9fe597d4f1b9.png)
+![Noko4](https://user-images.githubusercontent.com/118907489/204326898-7694dfd4-b301-4afe-ad68-dd5178643a10.png)
+![Noko5](https://user-images.githubusercontent.com/118907489/204326902-faae74da-e57b-43ce-bc32-56a02ce59be7.png)
 
 ## Autor ✒️
 **DIEGO SANTOS**
