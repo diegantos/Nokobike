@@ -21,7 +21,7 @@ En este proyecto he aprendido el uso de JQuery para hacer algunos efectos en la 
 [![JQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)](https://es.wikipedia.org/wiki/JQuery)
 
 ## Vista previa del proyecto
-Si quieres hechar un vistazo al proyecto, te recomiendo:
+Si quieres hechar un vistazo al proyecto, te recomiendo la sección E-Bikes:
 
 ![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204326898-7694dfd4-b301-4afe-ad68-dd5178643a10.png)
 ![Captura del proyecto](https://user-images.githubusercontent.com/118907489/204326902-faae74da-e57b-43ce-bc32-56a02ce59be7.png)
